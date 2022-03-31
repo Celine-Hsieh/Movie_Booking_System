@@ -1,5 +1,6 @@
 # Movie Ticket Booking System || Object Oriented Design
-A movie ticket booking system with c++
+A movie ticket booking system with c++.
+
 This is an OOP (object oriented programming) design.
  
 ## UML 
