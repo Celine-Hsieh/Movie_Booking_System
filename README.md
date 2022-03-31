@@ -2,7 +2,7 @@
  A movie ticket booking system with c++
  
 <h1 align="center">
-  <img src="https://user-images.githubusercontent.com/69034494/160980620-e313c4b1-7359-4a8b-bc22-deb7dd604758.png" width="800" height="400"/>
+  <img src="https://user-images.githubusercontent.com/69034494/160980620-e313c4b1-7359-4a8b-bc22-deb7dd604758.png" width="600" height="200"/>
 </h1>
 
 
