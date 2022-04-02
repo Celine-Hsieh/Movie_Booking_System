@@ -38,8 +38,8 @@ void Movie::addLinkToOrder(Order *order, int movie_number, int movie_time)
         seat=seat+next_seat;
     }
 
-    //fout<<c.memberid_save<<","<<hall_name<<","<<name[i]<<","<<show_time<<","<<number<<"¤H"<<","<<seat<<endl;
-    fout<<","<<show.name[i]<<","<<show_time<<","<<order->number<<"¤H"<<","<<seat<<endl;
+    //fout<<c.memberid_save<<","<<hall_name<<","<<name[i]<<","<<show_time<<","<<number<<"äºº"<<","<<seat<<endl;
+    fout<<","<<show.name[i]<<","<<show_time<<","<<order->number<<"äºº"<<","<<seat<<endl;
 }
 
 void Movie::ticket_print(Order *order, int movie_number, int movie_time)
@@ -66,21 +66,21 @@ void Movie::ticket_print(Order *order, int movie_number, int movie_time)
     (*this).addLinkToOrder(order, movie_number, movie_time);
     cout<<"\n\n\n\n\t\t\t ________________________________________________________________________\n";
     cout<<"\t\t\t|                                                                       |\n";
-    cout<<"\t\t\t|   ¿Ë·RªºÅU«È,                                                         |\n";
-    cout<<"\t\t\t|                  ®¥³ß§A­q¦ì§¹¦¨!                                      |\n";
+    cout<<"\t\t\t|   è¦ªæ„›çš„é¡§å®¢,                                                         |\n";
+    cout<<"\t\t\t|                  æ­å–œä½ è¨‚ä½å®Œæˆ!                                      |\n";
     cout<<"\t\t\t|                                                                       |\n";
-    cout<<"\t\t\t|                  ­q¦ì©ú²Ó:                                            |\n";
-    cout<<"\t\t\t|                            ¹q¼v¦WºÙ: "<<show.name[i]<<"                     \n";
-    cout<<"\t\t\t|                            ¹q¼v®É¨è: "<<show_time<<"                         |\n";
-    cout<<"\t\t\t|                            ¤H¼Æ: "<<order->number<<"                                    |\n";
-    cout<<"\t\t\t|                            ¹q¼v®y¦ì: ";
+    cout<<"\t\t\t|                  è¨‚ä½æ˜ç´°:                                            |\n";
+    cout<<"\t\t\t|                            é›»å½±åç¨±: "<<show.name[i]<<"                     \n";
+    cout<<"\t\t\t|                            é›»å½±æ™‚åˆ»: "<<show_time<<"                         |\n";
+    cout<<"\t\t\t|                            äººæ•¸: "<<order->number<<"                                    |\n";
+    cout<<"\t\t\t|                            é›»å½±åº§ä½: ";
     for(i=0;i<order->number;i++)
     {
         letter=order->ticket_row[i]+65;
         cout<<letter<<order->ticket_col[i]+1;
         if(i<order->ticket-1){cout<<",";}
     }
-    cout<<"\n\t\t\t|                            ¶O¥Î: "<<order->number<<" * 250 ="<<cost<<"                         |\n";
+    cout<<"\n\t\t\t|                            è²»ç”¨: "<<order->number<<" * 250 ="<<cost<<"                         |\n";
     cout<<"\t\t\t|                                                                       |\n";
     cout<<"\t\t\t|                                                                       |\n";
     cout<<"\t\t\t|_______________________________________________________________________|\n";
