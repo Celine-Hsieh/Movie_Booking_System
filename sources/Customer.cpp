@@ -6,12 +6,12 @@ void Customer::enter_system(Movie *movie[5])
 {
     //system("cls");
     cout<<"================================================================================"<<endl;
-    cout<<"                              �w��ϥμv���ʲ��t��                              "<<endl;
+    cout<<"                              歡迎使用影城購票系統                              "<<endl;
     cout<<"================================================================================"<<endl;
-    cout<<"\n\n\n\n\n\t\t\t �п�ܾާ@: ";
-    cout<<"\n\t\t\t\t\t 1. ���U�|��\n";
-    cout<<"\n\t\t\t\t\t 2. �n�J�|��\n";
-    cout<<"\n\t\t\t\t\t 3. �^�W�@��\n";
+    cout<<"\n\n\n\n\n\t\t\t 請選擇操作: ";
+    cout<<"\n\t\t\t\t\t 1. 註冊會員\n";
+    cout<<"\n\t\t\t\t\t 2. 登入會員\n";
+    cout<<"\n\t\t\t\t\t 3. 回上一頁\n";
     cout<<"\n\n\n\n\n\n";
     cout<<"================================================================================"<<endl;
     cin>>user_in;
@@ -21,21 +21,21 @@ void Customer::enter_system(Movie *movie[5])
     {
         system("cls");
         cout<<"================================================================================"<<endl;
-        cout<<"                              �w��ϥμv���ʲ��t��                              "<<endl;
+        cout<<"                              歡迎使用影城購票系統                              "<<endl;
         cout<<"================================================================================"<<endl;
-        cout<<"\n\n\n\n\t\t\t �w��n�J�|��!!!\n";
+        cout<<"\n\n\n\n\t\t\t 歡迎登入會員!!!\n";
         enter=(*this).log_in(movie);
     }
 
     if(enter!=0||data_store!=0)
     {
         cout<<"================================================================================"<<endl;
-        cout<<"                              �w��ϥμv���ʲ��t��                              "<<endl;
+        cout<<"                              歡迎使用影城購票系統                              "<<endl;
         cout<<"================================================================================"<<endl;
-        cout<<"\n\n\n\n\n\t\t\t �п�ܾާ@: ";
-        cout<<"\n\t\t\t         1. �d�߭q��\n";
-        cout<<"\n\t\t\t         2. �w�q�q�v\n";
-        cout<<"\n\t\t\t         3. �^�W�@��\n";
+        cout<<"\n\n\n\n\n\t\t\t 請選擇操作: ";
+        cout<<"\n\t\t\t         1. 查詢訂單\n";
+        cout<<"\n\t\t\t         2. 預訂電影\n";
+        cout<<"\n\t\t\t         3. 回上一頁\n";
         cout<<"\n\n\n\n\n\n";
         cout<<"================================================================================"<<endl;
         cin>>order_look;
@@ -44,10 +44,10 @@ void Customer::enter_system(Movie *movie[5])
         if(order_look ==1)
         {
             show.check_order(memberid_save);
-            cout<<"\n\n\n\n\n\t\t\t �п�ܾާ@: ";
-            cout<<"\n\t\t\t         1. �w�q�q�v\n";
-            cout<<"\n\t\t\t         2. �^����\n";
-            cout<<"\n\t\t\t         3. ���}�t��\n";
+            cout<<"\n\n\n\n\n\t\t\t 請選擇操作: ";
+            cout<<"\n\t\t\t         1. 預訂電影\n";
+            cout<<"\n\t\t\t         2. 回首頁\n";
+            cout<<"\n\t\t\t         3. 離開系統\n";
             cout<<"\n\n\n\n\n\n";
             cin>>after_look;
 
@@ -56,7 +56,7 @@ void Customer::enter_system(Movie *movie[5])
             do
             {
                 show.show_movie_from_file();
-                cout<<"\n\n ��ܹq�v�ﶵ: ";
+                cout<<"\n\n 選擇電影選項: ";
                 int i;
                 cin>>i;
                 int movie_number=i;
@@ -69,7 +69,7 @@ void Customer::enter_system(Movie *movie[5])
             (*this).enter_system(movie);
         }else
         {
-            cout<<"\n\n ��J�L��! �^�쭺��\n";
+            cout<<"\n\n 輸入無效! 回到首頁\n";
             cout<<"================================================================================"<<endl;
         }
     }
@@ -85,15 +85,15 @@ void Customer::sign_up()
     fflush(stdin);
     system("cls");
     cout<<"================================================================================"<<endl;
-    cout<<"                              �w��ϥμv���ʲ��t��                              "<<endl;
+    cout<<"                              歡迎使用影城購票系統                              "<<endl;
     cout<<"================================================================================"<<endl;
-    cout<<"\n\n\n\t\t\t\t �п�J�m�W: ";
+    cout<<"\n\n\n\t\t\t\t 請輸入姓名: ";
     fflush(stdin);
     getline(cin,user_name);
-    cout<<"\n\t\t\t\t �п�J�ϥΪ�ID: ";
+    cout<<"\n\t\t\t\t 請輸入使用者ID: ";
     fflush(stdin);
     getline(cin,user_id);
-    cout<<"\n\t\t\t\t �п�J�ϥΪ̱K�X: ";
+    cout<<"\n\t\t\t\t 請輸入使用者密碼: ";
     fflush(stdin);
     getline(cin,user_passwordword);
     fout<<user_name<<","<<user_id<<","<<user_passwordword<<endl;
@@ -111,7 +111,7 @@ int Customer::log_in(Movie *movie[5])
     int password_count=0, found_password=0;
 
     do{
-        cout<<"\n\n �п�J�ϥΪ�ID: ";
+        cout<<"\n\n 請輸入使用者ID: ";
         fflush(stdin);
         cin>>member_id;
         ifstream myfile;
@@ -128,27 +128,27 @@ int Customer::log_in(Movie *movie[5])
             if(member_id==id && found_user==0)
             {
                 found_user++;
-                cout<<"\n\n ���|��\n";
+                cout<<"\n\n 有會員\n";
                 do{
-                        cout<<"\n\n �п�J�K�X: ";
+                        cout<<"\n\n 請輸入密碼: ";
                         fflush(stdin);
                         cin>>member_password;
                         if(member_password==password)
                         {
                             found_password++;
                             password_count=0;
-                            cout<<"\n\n �w�� "<<member_id<<" �n�J\n";
+                            cout<<"\n\n 歡迎 "<<member_id<<" 登入\n";
                             myfile.close();
                             memberid_save=member_id;
                             //break;
 
                         }else if(found_password==0)
                         {
-                            cout<<"\n �K�X���~!!"<<" �ѤU "<<2-password_count<<" ���| "<<" \n";//password_count is to count no. of attempts left
+                            cout<<"\n 密碼錯誤!!"<<" 剩下 "<<2-password_count<<" 機會 "<<" \n";//password_count is to count no. of attempts left
                             password_count++;
                         }
                 }while(password_count<3 && password_count>0);
-            }else if(myfile.eof() && found_user==0){cout<<"\n\n �|�����s�b\n";}
+            }else if(myfile.eof() && found_user==0){cout<<"\n\n 會員不存在\n";}
         }
     }while(found_user==0);
     if (password_count==3){(*this).enter_system(movie);}
@@ -162,10 +162,10 @@ void Customer::make_booking(Movie movie, int i)
     movie_time=order->choose_movie(movie_time, i);
     //system("cls");
     movie.ticket_print(order, i, movie_time);
-    cout<<"\n\n\n\n\n\t\t\t �п�ܾާ@: ";
-    cout<<"\n\t\t\t\t         1. �~��q��\n";
-    cout<<"\n\t\t\t\t         2. �^�쭺��\n";
-    cout<<"\n\t\t\t\t         3. ���}�t��\n";
+    cout<<"\n\n\n\n\n\t\t\t 請選擇操作: ";
+    cout<<"\n\t\t\t\t         1. 繼續訂票\n";
+    cout<<"\n\t\t\t\t         2. 回到首頁\n";
+    cout<<"\n\t\t\t\t         3. 離開系統\n";
     cin>>in;
 }
 
