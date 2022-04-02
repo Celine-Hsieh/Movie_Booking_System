@@ -13,7 +13,7 @@ void Manager::enter_system(Movie *movie[5])
             password_count=3;
         }else
         {
-            cout<<"\n ±K½X¿ù»~!!"<<" ³Ñ¤U "<<2-password_count<<" ¾÷·| "<<" \n";//password_count is to count no. of attempts left
+            cout<<"\n å¯†ç¢¼éŒ¯èª¤!!"<<" å‰©ä¸‹ "<<2-password_count<<" æ©Ÿæœƒ "<<" \n";//password_count is to count no. of attempts left
             password_count++;
         }
     }
@@ -22,12 +22,12 @@ void Manager::enter_system(Movie *movie[5])
 
 void Manager::password_proctect()
 {
-    cout<<"\n\n ½Ð¿é¤JºÞ²zªÌ±K½X: ";
+    cout<<"\n\n è«‹è¼¸å…¥ç®¡ç†è€…å¯†ç¢¼: ";
     cin>>password;
     //system("cls");
     while(star<password.length())
     {
-        if(star==0){cout<<"\n\n ½Ð¿é¤JºÞ²zªÌ±K½X: \n\n";}
+        if(star==0){cout<<"\n\n è«‹è¼¸å…¥ç®¡ç†è€…å¯†ç¢¼: \n\n";}
         cout<<" * ";
         star++;
     }
@@ -38,11 +38,11 @@ void Manager::manager(Movie *movie[5])
     Show show;
     //system("cls");
     cout<<"================================================================================"<<endl;
-    cout<<"                              Åwªï¨Ï¥Î¼v«°ÁÊ²¼¨t²Î                              "<<endl;
+    cout<<"                              æ­¡è¿Žä½¿ç”¨å½±åŸŽè³¼ç¥¨ç³»çµ±                              "<<endl;
     cout<<"================================================================================"<<endl;
-    cout<<"\n\n\n\n\n\t\t\t         1. ¬d¸ß©Ò¦³­q³æ\n";
-    cout<<"\n\t\t\t         2. «á¥x¹w­q¹q¼v\n";
-    cout<<"\n\t\t\t         3. ¦^­º­¶\n";
+    cout<<"\n\n\n\n\n\t\t\t         1. æŸ¥è©¢æ‰€æœ‰è¨‚å–®\n";
+    cout<<"\n\t\t\t         2. å¾Œå°é è¨‚é›»å½±\n";
+    cout<<"\n\t\t\t         3. å›žé¦–é \n";
     cout<<"\n\n\n\n\n\n";
     cout<<"================================================================================"<<endl;
     cin>>order_look;
@@ -50,10 +50,10 @@ void Manager::manager(Movie *movie[5])
     if(order_look ==1)
     {
         show.check_order(memberid_save);
-        cout<<"\n\n\n\n\n\t\t\t ½Ð¿ï¾Ü¾Þ§@: ";
-        cout<<"\n\t\t\t         1. «á¥x¹w­q¹q¼v\n";
-        cout<<"\n\t\t\t         2. ¦^­º­¶\n";
-        cout<<"\n\t\t\t         3. Â÷¶}¨t²Î\n";
+        cout<<"\n\n\n\n\n\t\t\t è«‹é¸æ“‡æ“ä½œ: ";
+        cout<<"\n\t\t\t         1. å¾Œå°é è¨‚é›»å½±\n";
+        cout<<"\n\t\t\t         2. å›žé¦–é \n";
+        cout<<"\n\t\t\t         3. é›¢é–‹ç³»çµ±\n";
         cout<<"\n\n\n\n\n\n";
         cin>>after_look;
 
@@ -62,7 +62,7 @@ void Manager::manager(Movie *movie[5])
         do
         {
             show.show_movie_from_file();
-            cout<<"\n\n ¿ï¾Ü¹q¼v¿ï¶µ: ";
+            cout<<"\n\n é¸æ“‡é›»å½±é¸é …: ";
             int i;
             cin>>i;
             int movie_number=i;
@@ -71,7 +71,7 @@ void Manager::manager(Movie *movie[5])
         }while(in==1);
     }else if(order_look>3 || order_look<1)
     {
-        cout<<"\n\n ¿é¤JµL®Ä! ¦^¨ì­º­¶\n";
+        cout<<"\n\n è¼¸å…¥ç„¡æ•ˆ! å›žåˆ°é¦–é \n";
         cout<<"================================================================================"<<endl;
     }
 }
@@ -83,9 +83,9 @@ void Manager::make_booking(Movie movie, int i)
     movie_time = order->choose_movie(movie_time, i);
     //system("cls");
     movie.ticket_print(order, i, movie_time);
-    cout<<"\n\n\n\n\n\t\t\t ½Ð¿ï¾Ü¾Þ§@: ";
-    cout<<"\n\t\t\t         1. Ä~Äò­q²¼\n";
-    cout<<"\n\t\t\t         2. ¦^¨ì­º­¶\n";
-    cout<<"\n\t\t\t         3. Â÷¶}¨t²Î\n";
+    cout<<"\n\n\n\n\n\t\t\t è«‹é¸æ“‡æ“ä½œ: ";
+    cout<<"\n\t\t\t         1. ç¹¼çºŒè¨‚ç¥¨\n";
+    cout<<"\n\t\t\t         2. å›žåˆ°é¦–é \n";
+    cout<<"\n\t\t\t         3. é›¢é–‹ç³»çµ±\n";
     cin>>in;
 }
