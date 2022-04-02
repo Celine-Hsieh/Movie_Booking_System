@@ -11,7 +11,7 @@ void Show::check_order(string memberid_save)
 
     ifstream fin;
     fin.open("order_detail.csv");
-    cout<<" ­q¦ì©ú²Ó:\n";
+    cout<<" è¨‚ä½æ˜Žç´°:\n";
 
     do
     {
@@ -33,14 +33,14 @@ void Show::check_order(string memberid_save)
         }
     }
     fin.close();
-    cout<<"\n¥H¤WÁ`¦@¦³ "<<detail_count<<" µ§­q³æ\n";
+    cout<<"\nä»¥ä¸Šç¸½å…±æœ‰ "<<detail_count<<" ç­†è¨‚å–®\n";
 
 }
 
 void Show::show_movie_from_file()
 {
     int i=0;
-    cout<<"\n\n ¹q¼v®É¨èªí:\n\n\n";
+    cout<<"\n\n é›»å½±æ™‚åˆ»è¡¨:\n\n\n";
     ifstream fin;
     fin.open("movie_showtime.csv");
 
@@ -48,9 +48,9 @@ void Show::show_movie_from_file()
     {
         cout<<"\n ";
         getline(fin,name[i],',');
-        cout<<"¼vÆU :\t"<<i+1<<name[i]<<endl<<endl;
+        cout<<"å½±å»³ :\t"<<i+1<<name[i]<<endl<<endl;
         cout<<"\t";
-        cout<<"¤W¬M®É¶¡: "<<name[i]<<" :-  "<<endl;
+        cout<<"ä¸Šæ˜ æ™‚é–“: "<<name[i]<<" :-  "<<endl;
         int j=0;
         getline(fin,time[i][j],'\n');
         cout<<"\t";
@@ -71,8 +71,8 @@ int Show::seat_display(int movie_number,int movie_time)
         getline(fin,name[i],'\n');
     }
     getline(fin,name[i],',');
-    cout<<"\n\n\t    ¥H¤U¬O¹q¼v [ "<<name[i]<<" ] ªº¼v«°®y¦ìªí: \n";
-    cout<<"\n\n\t\t      ¤w¹w©wªº®y¦ì¼Ð°O¬° [x] \n\n";
+    cout<<"\n\n\t    ä»¥ä¸‹æ˜¯é›»å½± [ "<<name[i]<<" ] çš„å½±åŸŽåº§ä½è¡¨: \n";
+    cout<<"\n\n\t\t      å·²é å®šçš„åº§ä½æ¨™è¨˜ç‚º [x] \n\n";
     fin.close();
 
     for(i=0;i<5;i++)
@@ -96,13 +96,13 @@ int Show::seat_display(int movie_number,int movie_time)
         cout<<"\n\n";
         if(i==4)
         {
-            cout<<"\n\n\t\t\t  ¿Ã¹õ¦ì¸m\n";
+            cout<<"\n\n\t\t\t  èž¢å¹•ä½ç½®\n";
             cout<<"\t______________________________________________________________________________________________________________";
         }
     }
     if(full==40)
     {
-        cout<<"\n\n\t\t\t  ­q¦ì¤wº¡!\n";
+        cout<<"\n\n\t\t\t  è¨‚ä½å·²æ»¿!\n";
         return 1;
     }else{return 0;}
 }
