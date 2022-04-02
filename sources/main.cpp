@@ -3,11 +3,11 @@ using namespace std;
 
 int main()
 {
-    Movie *movie[5] = {new Movie("¡m¼Ç¥ú¤§«°¡G¯}¾å¡n"),
-                       new Movie("¡m©Ç­L¡n"),
-                       new Movie("¡mºq³ïÆg¡n"),
-                       new Movie("¡m¥Í©R¤¤ªº¬ü¦n·N¥~¡n"),
-                       new Movie("¡m¤@¯Åª±®a¡n")};
+    Movie *movie[5] = {new Movie("ã€Šæš®å…‰ä¹‹åŸï¼šç ´æ›‰ã€‹"),
+                       new Movie("ã€Šæ€ªèƒã€‹"),
+                       new Movie("ã€Šæ­Œå–‰è®šã€‹"),
+                       new Movie("ã€Šç”Ÿå‘½ä¸­çš„ç¾å¥½æ„å¤–ã€‹"),
+                       new Movie("ã€Šä¸€ç´šç©å®¶ã€‹")};
 
     Customer customer[5];
     Manager manager;
@@ -15,7 +15,7 @@ int main()
     int interface,i=0; //i = customer count
 
     cout<<"================================================================================"<<endl;
-    cout<<"                              Åwªï¨Ï¥Î¼v«°ÁÊ²¼¨t²Î                              "<<endl;
+    cout<<"                              æ­¡è¿ä½¿ç”¨å½±åŸè³¼ç¥¨ç³»çµ±                              "<<endl;
     do{
         USER_INTER;
         cin>>interface;
@@ -23,12 +23,12 @@ int main()
         if (interface == CUSTOMER){customer[i].enter_system(movie);}
         else if(interface == MANAGER){manager.enter_system(movie);}
         else if(interface == LEAVE_SYSTEM || customer[i].after_look == LEAVE_SYSTEM){goto bye;}
-        else{cout<<" ¿é¤J¿ù»~!!\n";}
+        else{cout<<" è¼¸å…¥éŒ¯èª¤!!\n";}
         i++;
 
     }while(interface != LEAVE_SYSTEM || customer[i].after_look != LEAVE_SYSTEM || manager.after_look != LEAVE_SYSTEM);
 
     bye:
-        cout<<"\n ·PÁÂ¨Ï¥Î¼v«°­q²¼¨t²Î!\n";
+        cout<<"\n æ„Ÿè¬ä½¿ç”¨å½±åŸè¨‚ç¥¨ç³»çµ±!\n";
     return 0;
 }
