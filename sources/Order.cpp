@@ -10,9 +10,9 @@ int Order::choose_movie(int movie_time, int movie_number)
     int i;
     string show_time;
     ifstream fin;
-    cout<<"\n\n ¹q¼v: "<<movie_name<<endl;
+    cout<<"\n\n é›»å½±: "<<movie_name<<endl;
 
-    cout<<"\n\n ¿ï¾Ü³õ¦¸(1-6): ";
+    cout<<"\n\n é¸æ“‡å ´æ¬¡(1-6): ";
     cin>>movie_time;
 
     fin.open("movie_showtime.csv");
@@ -22,7 +22,7 @@ int Order::choose_movie(int movie_time, int movie_number)
     for(int j=0;j<movie_time;j++){getline(fin,show_time,',');}
     fin.close();
 
-    cout<<"\n\n ³õ¦¸ "<<movie_time<<": "<<show_time;
+    cout<<"\n\n å ´æ¬¡ "<<movie_time<<": "<<show_time;
 
     fin.open("movie_showtime.csv");
     for(i=0;i<movie_number-1;i++)
@@ -32,7 +32,7 @@ int Order::choose_movie(int movie_time, int movie_number)
     getline(fin,show.name[i],',');
 
     fin.close();
-    cout<<"\n\n ¤H¼Æ: ";
+    cout<<"\n\n äººæ•¸: ";
     cin>>number;
 
     for(ticket=0;ticket<number;ticket++)//loop for booking the desired no. of tickets as input by user
@@ -47,7 +47,7 @@ void Order::book_seat(int movie_number,int movie_time ,int number_count)//first 
     Show show;                                                           //2nd csv_row is for show time
     if(show.seat_display(movie_number,movie_time)==0)
     {
-    cout<<"\n\n\t\t\t½Ð¿é¤J²Ä "<<number_count<<" ­Ó®y¦ì½s¸¹(ex: A1): ";
+    cout<<"\n\n\t\t\tè«‹è¼¸å…¥ç¬¬ "<<number_count<<" å€‹åº§ä½ç·¨è™Ÿ(ex: A1): ";
     cin>>chr>>col;
     cout<<"\n";
 
@@ -64,7 +64,7 @@ void Order::book_seat(int movie_number,int movie_time ,int number_count)//first 
 
         while(show.seat_print[show.cinema][movie_number][movie_time][letter][col]!=0)
         {
-            cout<<"\n\n\t\t\t["<<chr<<col+1<<"] ®y¦ì¤w¦³¤H¿ï! ½Ð¿é¤J¨ä¥L®y¦ì: ";
+            cout<<"\n\n\t\t\t["<<chr<<col+1<<"] åº§ä½å·²æœ‰äººé¸! è«‹è¼¸å…¥å…¶ä»–åº§ä½: ";
             cin>>chr>>col;
             letter=chr-65;
             col=col-1;
@@ -75,7 +75,7 @@ void Order::book_seat(int movie_number,int movie_time ,int number_count)//first 
     }
     }else
     {
-        cout<<"½Ð¿ï¾Ü¨ä¥L³õ¦¸!\n";
+        cout<<"è«‹é¸æ“‡å…¶ä»–å ´æ¬¡!\n";
         show.show_movie_from_file();
     }
 }
