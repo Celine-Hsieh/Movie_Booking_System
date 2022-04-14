@@ -2,6 +2,10 @@
 A movie ticket booking system with c++
 
 This is an OOP (object oriented programming) design.
+Using the C++ object-oriented feature, write a simple movie theater booking system.The system provides 
+ 1. Customer booking 
+ 2. Customers who have booked can check the booking record 
+ 3. The administrator can check all the booking information
  
 ## UML 
 <h1 align="center">
